@@ -760,7 +760,7 @@ a.custom-logo-link:focus {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 2rem 1.5rem 0.75rem;
+  padding: 4rem 3rem 2rem;
   font-size: 0.88em; }
 
 .site-footer__menu {
@@ -2235,8 +2235,6 @@ input[type='submit'].wpcf7-submit {
 @media only screen and (min-width: 1024px) {
   .site-header {
     padding: 4rem 3rem; }
-  .site-footer {
-    padding: 4rem 3rem 2rem; }
   .widget-area-secondary {
     display: -webkit-box;
     display: -ms-flexbox;

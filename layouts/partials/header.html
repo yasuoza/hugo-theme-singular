@@ -3,13 +3,13 @@
 
     <div class="site-branding__logo site-logo site-logo--rounded">
       <a class="custom-logo-link" rel="home" itemprop="url" href="">
-        <img width="96" height="96" src="https://blog.integer.themepatio.com/wp-content/uploads/sites/31/2017/06/cropped-sample-avatar.jpg">
+        <img width="96" height="96" src="{{ .Site.Params.logo.url | relURL }}">
       </a>
     </div>
 
     <div class="site-branding__copy">
-      <h1 class="site-title"><a href="/" rel="home">Integer</a></h1>
-      <p class="site-description">Theme for telling stories</p>
+      <h1 class="site-title"><a href="/" rel="home">{{ .Site.Title }}</a></h1>
+      <p class="site-description">{{ .Site.Params.description }}</p>
     </div>
 
   </div>

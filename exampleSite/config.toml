@@ -1,15 +1,27 @@
+# For hugo theme development
 themesDir = "../"
 
-baseURL = "https://gohugo.io/"
-title = "Hugo Themes"
-author = "Steve Francia"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+# Use singular theme
 theme = "singular"
-paginate = 3
+
+# Site Base Information
+baseURL = "https://gohugo.io/"
+title = "Singular"
+copyright = "Copyright License [GNU General Public License v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)"
+
+# Language
 languageCode = "en"
 DefaultContentLanguage = "en"
+
+# Markup
+paginate = 3
 enableInlineShortcodes = true
 pygmentsCodefences = true
+
+[params]
+  description = "Simple and clean theme for hugo"
+  [params.logo]
+    url = "/images/icon.jpg"
 
 [markup]
   [markup.highlight]
@@ -22,7 +34,6 @@ pygmentsCodefences = true
 	page = "/:filename/"
 
 [menu]
-
   [[menu.main]]
     identifier = "about"
     name = "About"
@@ -35,7 +46,6 @@ tag = "tags"
 series = "series"
 
 [privacy]
-
   [privacy.vimeo]
     disabled = false
     simple = true
@@ -54,7 +64,6 @@ series = "series"
     privacyEnhanced = true
 
 [services]
-
   [services.instagram]
     disableInlineCSS = true
 
