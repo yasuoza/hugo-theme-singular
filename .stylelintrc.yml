@@ -1,0 +1,11 @@
+extends:
+  - stylelint-config-standard
+
+plugins:
+  - stylelint-scss
+
+syntax:
+  - scss
+
+rules:
+  no-descending-specificity: null
