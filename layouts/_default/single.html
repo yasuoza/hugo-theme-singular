@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article>
+  <header class="entry-header">
+    <h1 class="entry-title">{{ .Title }}</h1>
+
+  </header>
+    <div class="entry-meta entry-meta-before-content">
+      <span class="entry-meta-item posted-on">
+        <a href="{{.Permalink}}">
+          <time class="entry-date published" datetime="{{ .PublishDate }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+        </a>
+      </span>
+    </div>
+
+	<div class="entry-content">
+    {{ .Content }}
+  </div>
+
+  {{ if or .NextInSection .PrevInSection }}
+  <nav class="navigation post-navigation" role="navigation" aria-label="Posts navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+      {{ with .NextInSection }}
+      <div class="nav-nxt">
+        <span>Newer Post </span>
+        <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a>
+      </div>
+      {{ end }}
+      {{ with .PrevInSection }}
+      <div class="nav-pre">
+        <span>Older Post </span>
+        <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </nav>
+  {{ end }}
+
+</article>
+{{ end }}
+

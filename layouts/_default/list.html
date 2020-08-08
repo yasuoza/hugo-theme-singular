@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="posts__wrap posts__wrap--column">
+  <!-- Ranges through content/posts/*.md -->
+  {{ if .IsHome }}
+    {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+  {{ else }}
+    {{ $paginator := .Paginator.Pages }}
+  {{ end }}
+
+  {{ range .Paginator.Pages }}
+  <article class="posts__item posts-item">
+    <header class="posts-item__header">
+      <h2 class="posts-item__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    </header>
+
+    <div class="entry-meta entry-meta-index">
+      {{ if .Params.categories }}
+        {{ $cats := slice }}
+        {{ range $name := .Params.categories }}
+          {{ $cats = $cats | append (printf "<a href='%s'>%s</a>" (path.Join "/" "categories" $name) $name) }}
+        {{ end }}
+        <span class="entry-meta-item cat-links">{{ delimit $cats ", " }}</span>
+      {{ end }}
+      <span class="entry-meta-item posted-on">
+        <a href="{{.Permalink}}">
+          <time class="entry-date published" datetime="{{ .PublishDate }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+        </a>
+      </span>
+    </div>
+
+    <div class="posts-item__content">
+      {{ if .Truncated }}
+      <p>{{ .Summary }}</p>
+      <a href="{{ .Permalink }}">Continue reading<span class="screen-reader-text">{{ .Title }}</span></a>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "list/pagination.html" . }}
+
+{{ end }}

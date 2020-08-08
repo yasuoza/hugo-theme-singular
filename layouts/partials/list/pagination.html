@@ -1,0 +1,47 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+{{ $prevPageNumber := (sub $pag.PageNumber 1) }}
+{{ $nextPageNumber := (add $pag.PageNumber 1) }}
+<nav class="posts__pagination pagination" role="navigation">
+  <h2 class="screen-reader-text">Posts Navigation</h2>
+  <div class="nav-links">
+    {{ if $pag.HasPrev }}
+    <a class="pagination__item pagination__item--prev" href="{{ $pag.Prev.URL }}">
+      <svg class="icon-arrow-left" aria-hidden="true" role="img">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/svg-sprite.svg#icon-arrow-left"></use>
+      </svg>
+      Newer
+    </a>
+    {{ end }}
+    {{ with $pag.First }}
+    <a class="pagination__item{{ if eq . $pag }} pagination__item--current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ if ge (sub $prevPageNumber $pag.First.PageNumber) 2 }}
+    <span class="pagination__item pagination__item--dots">…</span>
+    {{ end }}
+    {{ if gt $prevPageNumber $pag.First.PageNumber }}
+    <a class="pagination__item" href="{{ $pag.Prev.URL }}">{{ $pag.Prev.PageNumber }}</a>
+    {{ end }}
+    {{ if not (or (eq $pag.PageNumber $pag.First.PageNumber) (eq $pag.PageNumber $pag.Last.PageNumber)) }}
+    <a class="pagination__item pagination__item--current" href="{{ $pag.URL }}">{{ $pag.PageNumber }}</a>
+    {{ end }}
+    {{ if lt $nextPageNumber $pag.Last.PageNumber }}
+    <a class="pagination__item" href="{{ $pag.Next.URL }}">{{ $pag.Next.PageNumber }}</a>
+    {{ end }}
+    {{ if ge (sub $pag.Last.PageNumber $nextPageNumber) 2 }}
+    <span class="pagination__item pagination__item--dots">…</span>
+    {{ end }}
+    {{ with $pag.Last }}
+    <a class="pagination__item{{ if eq . $pag }} pagination__item--current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ if $pag.HasNext }}
+    <a class="pagination__item pagination__item--next" href="{{ $pag.Next.URL }}">
+      Older
+      <svg class="icon-arrow-left" aria-hidden="true" role="img">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/svg-sprite.svg#icon-arrow-right"></use>
+      </svg>
+    </a>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}
