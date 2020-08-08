@@ -25,9 +25,11 @@ jobs:
 
       - name: Get dependencies
         run: yarn install
+        working-directory: singular
 
       - name: Run stylelint
         run: yarn run stylelint "assets/**/*.scss"
+        working-directory: singular
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.12
@@ -37,3 +39,4 @@ jobs:
 
       - name: Build site
         run: hugo --contentDir exampleSite --config exampleSite/config.toml
+        working-directory: singular
