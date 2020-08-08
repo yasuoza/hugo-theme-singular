@@ -1,12 +1,12 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
     <base href="{{ .Site.BaseURL }}">
     <title> {{ .Title }} </title>
     <link rel="canonical" href="{{ .Permalink }}">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C700%2C700i%2C800%2C800i&subset=latin%2Clatin-ext' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
 
     {{ if .Site.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/singular.css" "enableSourceMap" true ) }}
@@ -17,5 +17,7 @@
       {{ $styles := resources.Get "scss/singular.scss" | resources.ExecuteAsTemplate "style.singular.css" . | toCSS $cssOpts | minify | fingerprint }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
     {{ end }}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C700%2C700i%2C800%2C800i&subset=latin%2Clatin-ext' rel='stylesheet'>
 
+    {{ partial "analytics.html" . }}
 </head>
