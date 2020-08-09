@@ -1,11 +1,13 @@
 <header id="masthead" class="site-header">
   <div class="site-header__branding site-branding">
 
+    {{ with .Site.Params.logo }}
     <div class="site-branding__logo site-logo site-logo--rounded">
       <a class="custom-logo-link" rel="home" itemprop="url" href="">
-        <img width="96" height="96" src="{{ .Site.Params.logo.url | relURL }}">
+        <img width="96" height="96" src="{{ .url | relURL }}">
       </a>
     </div>
+    {{ end }}
 
     <div class="site-branding__copy">
       <h1 class="site-title"><a href="/" rel="home">{{ .Site.Title }}</a></h1>
