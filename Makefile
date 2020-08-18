@@ -1,5 +1,8 @@
 BASEURL ?= "http://localhost"
 
+docker/image:
+	DOCKER_BUILDKIT=1 docker build . -t hugo
+
 docker/build:
 	docker run --rm -v ${PWD}:/singular -w /singular \
 		hugo \
