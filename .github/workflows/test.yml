@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2.3.2
-        with:
-          path: singular
 
       - name: Use Node.js
         uses: actions/setup-node@v2.1.1
@@ -25,11 +23,9 @@ jobs:
 
       - name: Get dependencies
         run: yarn install
-        working-directory: singular
 
       - name: Run stylelint
         run: yarn run stylelint "assets/**/*.scss"
-        working-directory: singular
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2.4.12
@@ -39,4 +35,3 @@ jobs:
 
       - name: Build site
         run: hugo --contentDir exampleSite --config exampleSite/config.toml
-        working-directory: singular
