@@ -19,5 +19,11 @@
     {{ end }}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C700%2C700i%2C800%2C800i&subset=latin%2Clatin-ext' rel='stylesheet'>
 
+    {{ if .Site.Params.amazonJpAffiliate }}
+      {{ $cssOpts := (dict "targetPath" "css/amazon.css" ) }}
+      {{ $styles := resources.Get "scss/amazon.scss" | resources.ExecuteAsTemplate "style.amazon.css" . | toCSS $cssOpts | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+    {{ end }}
+
     {{ partial "analytics.html" . }}
 </head>
