@@ -10,6 +10,7 @@ on:
 
 defaults:
   run:
+    shell: bash
     working-directory: singular
 
 jobs:
