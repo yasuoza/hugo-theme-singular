@@ -8,6 +8,10 @@ on:
       - '*'
   pull_request_target:
 
+defaults:
+  run:
+    working-directory: singular
+
 jobs:
   test:
     runs-on: ubuntu-latest
