@@ -417,10 +417,9 @@ thead th {
 
 pre {
   overflow: auto;
-  padding: 1.5rem;
+  padding: 0 1rem;
   max-width: 100%;
   word-wrap: initial;
-  font-weight: bold;
   font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 }
 
@@ -429,7 +428,6 @@ kbd,
 samp,
 tt,
 var {
-  padding: 3px 5px;
   border-radius: 3px;
   font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 }
@@ -2707,16 +2705,16 @@ input[type='submit'].wpcf7-submit {
   }
 
   .entry-content pre {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .entry-content p img {
-    margin: 3.5rem 0;
+    margin: 3rem 0;
   }
 
   .entry-content .gallery {
-    margin: 3.5rem auto;
+    margin: 3rem auto;
   }
 
   .entry-content .wp-caption {
