@@ -23,7 +23,7 @@
       {{ end }}
       <span class="entry-meta-item posted-on">
         <a href="{{.Permalink}}">
-          <time class="entry-date published" datetime="{{ .PublishDate }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+          <time class="entry-date published" datetime="{{ dateFormat "2006-01-02T15:04:05-0700" .PublishDate.UTC }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
         </a>
       </span>
     </div>
