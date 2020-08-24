@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
 
+    {{ if .Site.Params.favicon }}
+      <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon }}">
+    {{ end }}
+
     {{ if .Site.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/singular.css" "enableSourceMap" true ) }}
       {{ $styles := resources.Get "scss/singular.scss" | resources.ExecuteAsTemplate "style.singular.css" . | toCSS $cssOpts }}
