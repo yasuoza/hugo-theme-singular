@@ -19,7 +19,7 @@ jobs:
     name: Run stylelint and site build test
     steps:
       - name: Check out code
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2.3.3
         with:
           path: singular
 
