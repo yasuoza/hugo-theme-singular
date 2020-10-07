@@ -42,6 +42,5 @@ jobs:
 
       - name: Build site
         run: |
-          pwd
-          ls -a
+          pwd # HACK for build stability
           hugo --contentDir='./exampleSite' --config='./exampleSite/config.toml'
