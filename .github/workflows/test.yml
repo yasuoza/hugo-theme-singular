@@ -41,4 +41,4 @@ jobs:
           extended: true
 
       - name: Build site
-        run: hugo --contentDir exampleSite --config exampleSite/config.toml
+        run: hugo --contentDir='./exampleSite' --config='./exampleSite/config.toml'
