@@ -337,7 +337,7 @@ thead th {
 /* Code */
 pre {
   overflow: auto;
-  padding: 0 1rem;
+  padding: 1rem;
   max-width: 100%;
   word-wrap: initial;
   font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
@@ -532,7 +532,7 @@ input:focus:-ms-input-placeholder {
   top: 0;
   right: 0; }
 
-input[type='submit'].search-submit {
+input.search-submit[type='submit'] {
   border-color: #03a9f4;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1580,7 +1580,7 @@ a.pagination__item:focus {
 .posts__wrap--column {
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 4rem;
-  max-width: 648px;
+  max-width: 768px;
   padding: 0 2rem; }
 
 .posts__wrap--grid {
@@ -1913,7 +1913,7 @@ blockquote.contact-form-submission br {
   display: none; }
 
 /* Contact Form 7 */
-input[type='submit'].wpcf7-submit {
+input.wpcf7-submit[type='submit'] {
   border-color: #03a9f4;
   background-color: #03a9f4;
   color: #fff; }
