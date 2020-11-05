@@ -1,8 +1,6 @@
-FROM golang:alpine
+FROM golang:buster
 
-ARG HUGO=0.76.5
-
-RUN apk update && apk add curl
+ARG HUGO=0.78.0
 
 RUN mkdir -p /tmp/hugo && \
     curl -sSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO}/hugo_extended_${HUGO}_Linux-64bit.tar.gz" | tar zx -C /tmp/hugo && \
@@ -11,6 +9,6 @@ RUN mkdir -p /tmp/hugo && \
 
 WORKDIR /root
 
-ENTRYPOINT ["hugo"]
+ENTRYPOINT ["/usr/local/bin/hugo"]
 
 EXPOSE 1313
