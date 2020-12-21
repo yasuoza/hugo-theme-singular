@@ -1,3 +1,3 @@
-FROM peaceiris/hugo:v0.79.0
+FROM peaceiris/hugo:v0.79.1
 
 EXPOSE 1313
