@@ -42,4 +42,4 @@ jobs:
 
       - name: Build site
         run: |
-          hugo --contentDir='./exampleSite' --config='./exampleSite/config.toml'
+          hugo --verbose --contentDir='./exampleSite' --config='./exampleSite/config.toml'
