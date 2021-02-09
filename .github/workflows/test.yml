@@ -42,4 +42,5 @@ jobs:
 
       - name: Build site
         run: |
+          sleep 5 # HACK
           hugo --verbose --contentDir='./exampleSite' --config='./exampleSite/config.toml'
