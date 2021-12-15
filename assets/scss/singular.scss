@@ -18,11 +18,15 @@ $color__accent: #03a9f4;
 $color__headings: #1e1e1e;
 $color__text: #222;
 $color__text-light: #a7a7a7;
+$color__dimgray: #696969;
 $color__gray: #e8e8e8;
 $color__success: #1fc281;
 $color__info: #00b9f2;
 $color__warning: #f4cc31;
 $color__danger: #e83337;
+
+$color--darkmode__background-body: #000;
+$color--darkmode__gray: #a7a7a7;
 
 /**
  * Normalize
@@ -222,6 +226,37 @@ optgroup {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
+}
+
+/**
+   * Darkmode.
+   */
+.darkmode--activated {
+  h1.site-title a {
+    color: $color__background-body;
+    text-shadow: none;
+  }
+
+  .posts-item__content a {
+    text-shadow: none;
+    mix-blend-mode: difference;
+  }
+
+  .pagination__item {
+    border: 1px solid $color--darkmode__gray;
+    color: $color__background-body;
+    mix-blend-mode: difference;
+
+    &:active,
+    &:focus,
+    &:hover {
+      mix-blend-mode: difference;
+    }
+
+    &--current {
+      color: $color__dimgray;
+    }
+  }
 }
 
 /**

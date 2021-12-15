@@ -179,6 +179,26 @@ optgroup {
   min-height: 100%; }
 
 /**
+   * Darkmode.
+   */
+.darkmode--activated h1.site-title a {
+  color: #fff;
+  text-shadow: none; }
+
+.darkmode--activated .posts-item__content a {
+  text-shadow: none;
+  mix-blend-mode: difference; }
+
+.darkmode--activated .pagination__item {
+  border: 1px solid #a7a7a7;
+  color: #fff;
+  mix-blend-mode: difference; }
+  .darkmode--activated .pagination__item:active, .darkmode--activated .pagination__item:focus, .darkmode--activated .pagination__item:hover {
+    mix-blend-mode: difference; }
+  .darkmode--activated .pagination__item--current {
+    color: #696969; }
+
+/**
    * Typography.
    */
 /* Headings */
@@ -532,7 +552,7 @@ input:focus:-ms-input-placeholder {
   top: 0;
   right: 0; }
 
-input.search-submit[type='submit'] {
+input[type='submit'].search-submit {
   border-color: #03a9f4;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1913,7 +1933,7 @@ blockquote.contact-form-submission br {
   display: none; }
 
 /* Contact Form 7 */
-input.wpcf7-submit[type='submit'] {
+input[type='submit'].wpcf7-submit {
   border-color: #03a9f4;
   background-color: #03a9f4;
   color: #fff; }
