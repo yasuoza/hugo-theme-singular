@@ -15,7 +15,7 @@ defaults:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: Run stylelint and site build test
     steps:
       - name: Check out code
