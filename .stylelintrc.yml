@@ -1,11 +1,15 @@
 extends:
-  - stylelint-config-standard
+  - stylelint-config-standard-scss
 
-plugins:
-  - stylelint-scss
+# plugins:
+  # - stylelint-scss
 
-syntax:
-  - scss
+# syntax:
+  # - scss
 
 rules:
+  color-function-notation: legacy
   no-descending-specificity: null
+  selector-class-pattern: null
+
+  scss/dollar-variable-pattern: null

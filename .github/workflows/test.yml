@@ -15,7 +15,7 @@ defaults:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: Run stylelint and site build test
     steps:
       - name: Check out code
@@ -42,5 +42,9 @@ jobs:
 
       - name: Build site
         timeout-minutes: 1
+        env:
+          HUGO_TIMEOUT: 31000
+          HUGO_IGNOREERRORS: error-remote-getjson
+          HUGO_SERVICES_INSTAGRAM_ACCESSTOKEN: dummytoken
         run: |
           hugo --verbose --contentDir='./exampleSite' --config='./exampleSite/config.toml'
