@@ -1,7 +1,10 @@
 {
   "devDependencies": {
-    "stylelint": "13.13.1",
-    "stylelint-config-standard": "21.0.0",
+    "stylelint": "14.1.0",
+    "stylelint-config-standard": "24.0.0",
     "stylelint-scss": "4.0.1"
+  },
+  "dependencies": {
+    "darkmode-js": "^1.5.7"
   }
 }

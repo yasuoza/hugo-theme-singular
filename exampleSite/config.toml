@@ -33,6 +33,10 @@ ignoreErrors = ["error-remote-getjson"]
     noClasses = true
     style = "github"
 
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [permalinks]
 	post = "/:year/:month/:day/:filename/"
 	page = "/:filename/"
